@@ -82,7 +82,6 @@ SET SoldAsVacant = CASE
                    END;
                    
 # Examine Duplicates
-
 WITH RowNumCTE AS (
   SELECT *, ROW_NUMBER() OVER (PARTITION BY ParcelID, PropertyAddress, SalePrice, SaleDate, LegalReference ORDER BY UniqueID) AS row_num
   FROM realestate
